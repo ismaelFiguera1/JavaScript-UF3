@@ -1,3 +1,4 @@
+/*
 console.log(navigator);
 console.log(Geolocation);
 console.log(history);
@@ -19,6 +20,15 @@ console.log(document.images);
 console.log(document.forms);
 console.log(document.styleSheets);
 console.log(document.scripts);
+*/
+setTimeout(() => {
+  console.log(document.getSelection().toString());
+}, 3000); //  son tres segons
+
+console.log();
+console.log();
+console.log();
+console.log();
 console.log();
 console.log();
 console.log();
