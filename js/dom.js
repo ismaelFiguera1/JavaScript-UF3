@@ -141,3 +141,38 @@ console.log($card.className);
 console.log($card.classList);
 
 /* toggle */
+/* toogle es un interruptor. Si te una classe la elimina, si no la te, la posa */
+
+console.log("*****toggle*****");
+
+console.log($card.classList);
+console.log($card.classList.contains("rotate-45"));
+console.log($card.classList.contains("opacity-20"));
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+$card.classList.toggle("rotate-45");
+$card.classList.replace("rotate-45", "rotate-135");
+$card.classList.add("opacity-80", "sepia");
+$card.classList.remove("rotate-135", "sepia");
+
+/* Com interactuar amb el contingut contextual i HTML d'un document */
+
+const $caption2 = document.querySelector(".caption-2");
+
+/* innertext i textcontent NO respecta indentacions ni tabulacions, i tampoc no interpreta els tags HTML. No es estandard */
+
+$caption2.innerText = "Es la caption 2";
+/* propietat estandard */
+$caption2.textContent = "es la caption 22";
+/* Si volem que s'interpretin els tags HTML, hem de utilitzar innerHTML */
+$caption2.innerHTML = "es la <b>caption</b> 2";
+
+const text =
+  "<div id='outerHTML'><ul><li>primer</li><li>primer</li><li>tercer</li></ul></div>";
+
+const $outer = document.querySelector("#outerHTML");
+
+console.log($outer);
+$outer.outerHTML("<p>primer<p>");
