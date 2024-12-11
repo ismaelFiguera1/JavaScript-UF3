@@ -340,6 +340,21 @@ const mesos = [
   "Desembre",
 ];
 
+const $ul3 = document.createElement("ul"),
+  $fragment = document.createDocumentFragment();
+
+/* No podem utilitzar nnerHTML en fragments perque els fragments son nodes*/
+
+mesos.forEach((el) => {
+  const $li = document.createElement("li");
+  $li.textContent = el;
+  $fragment.appendChild($li);
+});
+
+document.write("<h3>Mesos de l'any</h3>");
+$ul3.appendChild($fragment);
+document.body.appendChild($ul3); /* Append child al DOM */
+
 /*
 console.log($cards.);
 
