@@ -355,13 +355,32 @@ document.write("<h3>Mesos de l'any</h3>");
 $ul3.appendChild($fragment);
 document.body.appendChild($ul3); /* Append child al DOM */
 
-/*
-console.log($cards.);
+/* Template HTML */
 
-console.log($cards.);
+/* $fragmentTemplate = document.querySelector("#template-card"); */
+/* console.log($fragmentTemplate); */
 
-console.log($cards.);
+const $cardContent = [
+  { title: "imatge8", img: "https://picsum.photos/200/300?random=8" },
+  { title: "imatge9", img: "https://picsum.photos/200/300?random=9" },
+  { title: "imatge10", img: "https://picsum.photos/200/300?random=10" },
+  { title: "imatge11", img: "https://picsum.photos/200/300?random=11" },
+];
 
-console.log($cards.);
+const $fragmentTemplate = document.querySelector("#template-card").content,
+  $fragment2 = document.createDocumentFragment(),
+  $fragment3 = document.createDocumentFragment();
 
-console.log($cards.);*/
+/* Recorrer el fragment-template per afegir dinamicament els continguts */
+
+$cardContent.forEach((element) => {
+  $fragmentTemplate.querySelector("img").setAttribute("src", element.img);
+  $fragmentTemplate.querySelector("img").setAttribute("alt", element.title);
+  $fragmentTemplate.querySelector("figcaption").textContent = element.title;
+  /* al html nomes hi ha un template, si l'utilitzem ja no estara disponible per les seguents. La solucio es clonar un node amb importNode(estructuraAClonar, boolean).
+    Si boolean es true, clona tota l'estructura amb el seu contingut, pero si es fals nomes clonaria l'estructura (<template></template>) pero no el contingut */
+  let $clone = document.importNode($fragmentTemplate, true);
+  $fragment3.appendChild($clone);
+});
+
+$cards.appendChild($fragment3); /* Una sola insercio al dom */
