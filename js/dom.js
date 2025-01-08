@@ -253,7 +253,7 @@ const $figure = document.createElement("figure"),
   $figcaption = document.createElement("figcaption"),
   $figcaptiontext = document.createTextNode("imatge6");
 
-$cards.appendChild($figure);
+//$cards.appendChild($figure);
 
 /* Ara que ja tenim la nova figure, afegirem interactivament etiquetes al DOM */
 
@@ -291,7 +291,7 @@ $figure2.innerHTML = `        <img
 
 $figure2.classList.add("card");
 
-$cards.appendChild($figure2);
+//$cards.appendChild($figure2);
 
 /* Que passa si volem crear molts nodes de cop */
 /* Cada cop que fem un appendChild() te un cost considerable al document HTML. Aixo pot fer que si afegim centenars de tags HTML la pagina quedi bloquejada */
@@ -383,4 +383,60 @@ $cardContent.forEach((element) => {
   $fragment3.appendChild($clone);
 });
 
-$cards.appendChild($fragment3); /* Una sola insercio al dom */
+// $cards.appendChild($fragment3); /* Una sola insercio al dom */
+
+/* Modificant elements de tipus card 
+    $cards
+*/
+const $newCard = document.createElement("figure");
+$newCard.innerHTML = `      
+        <img src="https://picsum.photos/200/200/?random=6" alt="" />
+        <figcaption>imatge6</figcaption>
+      `;
+$newCard.classList.add("card");
+//  $cards.appendChild($newCard); /* Afegir la card 6  al final
+
+/* Substituim la 3ra card per la new card   */
+//$cards.replaceChild($newCard, $cards.children[2]);
+
+/*  Inserir la newcard abans de la primera card */
+
+$cards.insertBefore($newCard, $cards.firstElementChild);
+
+/* Eliminar una card per exemple la darrera */
+$cards.removeChild($cards.lastElementChild);
+
+/*  clonar un element i afegir-lo al final de les cards */
+
+//const $cloneCard = document.importNode($cards.lastElementChild, true);
+
+//$cards.appendChild($cloneCard, true);
+
+const $cloneCard = $cards.cloneNode(true);
+
+document.body.appendChild($cloneCard);
+
+/* Modificar elements amb els nous metodes  */
+
+//  insertAdjacentElement(posicio, element)  (appendChild o inserBefore)
+//  insertAdjacentHTML(posicio, element)     (innerHTML)
+//  insertAdjacentText(posicio, text)        (textContent)
+
+/*
+
+On posicio pot ser:
+    beforebegin(germa anterio)
+    afterbegin(primer fill)
+    beforeend(darrer fill)
+    aftered(germa seguent)
+
+*/
+
+//  exemples:
+
+const $newCard7 = document.createElement("figure");
+$newCard7.innerHTML = `      
+        <img src="https://picsum.photos/200/200/?random=6" alt="" />
+        <figcaption>imatge6</figcaption>
+      `;
+$newCard.classList.add("card");
