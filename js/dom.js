@@ -436,7 +436,42 @@ On posicio pot ser:
 
 const $newCard7 = document.createElement("figure");
 $newCard7.innerHTML = `      
-        <img src="https://picsum.photos/200/200/?random=6" alt="" />
-        <figcaption>imatge6</figcaption>
+        <img src="https://picsum.photos/200/200/?random=7" alt="" />
+        <figcaption>imatge7</figcaption>
       `;
-$newCard.classList.add("card");
+$newCard7.classList.add("card");
+
+/*  cards es l'element de referencia    */
+
+$cards.insertAdjacentHTML("beforebegin", $newCard7.outerHTML);
+$cards.insertAdjacentHTML("afterend", $newCard7.outerHTML);
+$cards.insertAdjacentHTML("afterbegin", $newCard7.outerHTML);
+$cards.insertAdjacentHTML("beforeend", $newCard7.outerHTML);
+
+/*  Afegir text en comptes de HTML  */
+//  insertAdjacentText(posicio, text)        (textContent)
+let $contentCard = `      
+        <img src="https://picsum.photos/200/200/?random=70" alt="" />
+        <figcaption></figcaption>
+      `;
+
+/*    Aqui tenim un  codi HTML    */
+
+const $newCard8 = document.createElement("figure");
+
+$newCard8.classList.add("card");
+
+//  Afegim el text a la variable
+$newCard8.insertAdjacentHTML("beforeend", $contentCard);
+
+/*  Fiquem el codi a $newCard8  */
+
+$newCard8
+  .querySelector("figcaption")
+  .insertAdjacentText("afterbegin", "Imatge 70");
+
+/*  Busquem el figcaption i li fiquem el text "Imatge 70"   */
+
+$cards.insertAdjacentElement("afterbegin", $newCard8);
+
+/*  Insertem el $newCard8 a la classe $cards    */
