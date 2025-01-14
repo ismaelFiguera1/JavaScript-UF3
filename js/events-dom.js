@@ -41,7 +41,16 @@ La crida de la funcio va sense parentesis
 $eventMultiple.addEventListener("dblclick", () => alert("doble click 3.0"));
 
 const $eventDobleClick = document.getElementById("event-dblclick");
-
+/*
 $eventDobleClick.addEventListener("dblclick", function () {
   alert("doble click 2.0");
 });
+*/
+
+$eventDobleClick.onclick = function () {
+  alert("Sol 1 click");
+};
+
+$eventDobleClick.ondblclick = function () {
+  alert("2 click");
+};
