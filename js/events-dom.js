@@ -41,16 +41,40 @@ La crida de la funcio va sense parentesis
 $eventMultiple.addEventListener("dblclick", () => alert("doble click 3.0"));
 
 const $eventDobleClick = document.getElementById("event-dblclick");
-/*
+
 $eventDobleClick.addEventListener("dblclick", function () {
   alert("doble click 2.0");
 });
+
+//  remove event click      nomes funciona si s'utilitza diferents events amb addeventlistener
+
+/*
+La 
 */
 
-$eventDobleClick.onclick = function () {
-  alert("Sol 1 click");
+const removeEventClick = (e) => {
+  alert(`eliminant l'event ${e.type}`);
+  $removeEvent.removeEventListener("click", removeEventClick);
+  // $removeEvent.disabled = true;
 };
 
-$eventDobleClick.ondblclick = function () {
-  alert("2 click");
-};
+const $removeEvent = document.getElementById("remove-event");
+
+$removeEvent.addEventListener("click", removeEventClick);
+$removeEvent.addEventListener("dblclick", () => alert("doouble click"));
+
+/* Flux d'events --- Bombolla i captura */
+
+const $divEvents = document.querySelectorAll(".flux-events div");
+
+console.log($divEvents);
+
+function fluxEvents(e) {
+  console.log(`Hola, `);
+}
+
+//  assignarem dinamicament listeners
+
+$divEvents.forEach((div) => {
+  div.addEventListener("click", fluxEvents);
+});
