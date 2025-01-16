@@ -70,11 +70,91 @@ const $divEvents = document.querySelectorAll(".flux-events div");
 console.log($divEvents);
 
 function fluxEvents(e) {
-  console.log(`Hola, `);
+  console.log(`Hola, soc ${this.className}, origen ${e.target.className}`);
+  e.stopPropagation();
 }
 
 //  assignarem dinamicament listeners
 
 $divEvents.forEach((div) => {
-  div.addEventListener("click", fluxEvents);
+  //  div.addEventListener("click", fluxEvents /*{ once: true }*/);
+});
+
+const $linkEvents = document.querySelector(".flux-events a");
+
+console.log($linkEvents);
+
+$linkEvents.addEventListener("click", (e) => {
+  // alert("Has fet click a google");
+  e.preventDefault(); //  Cancela l'accio per defecte
+  //e.stopPropagation();
+});
+
+/*
+    Delegacio d'events al DOM
+*/
+/*
+    La idea es delegar events a un element pare o superior, a partir de aqui cal detectar el node o element que ha activat l'event i llavors desencadenar la programacio. exemple: en un formulari podriam assignar l'event a nivell de formulari en comptes de fero per cada input, inclus podriem delegar l'event al document.
+    
+    Amb  un sol listener detectem l'element que ha desencadenat l'event i actuem en consequencia.
+    A mes no hi ha propagacio perque l'element es al nivell superior
+*/
+
+document.addEventListener("click", (e) => {
+  alert(`Event click capturat al document ${e.target}`);
+  if (e.target.matches(".flux-events a")) {
+    alert("L'ha trobat");
+    e.preventDefault();
+  }
+});
+
+/*
+
+
+
+
+AQUEST DIA VAIG FALTAR
+
+
+
+*/
+
+/*
+    Eevent DOMContentLoaded
+*/
+
+window.addEventListener("resize", (e) => {
+  console.clear();
+  console.log("********Event resize *********");
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
+  console.log(window.outerWidth);
+  console.log(window.outerHeight);
+});
+
+window.addEventListener("scroll", (e) => {
+  console.clear();
+  console.log("********Event Scroll *********");
+  console.log(window.scrollX);
+  console.log(window.scrollY);
+});
+
+window.addEventListener("load", (e) => {
+  console.clear();
+  console.log("********Event load *********");
+  console.log(window.screenX);
+  console.log(window.screenY);
+});
+
+//alternatives al load (OLD)
+/*
+window.load(function)
+document.ready(function)
+documen.on("ready",function)
+*/
+
+window.addEventListener("load", (e) => {
+  console.log("******** Content Load *********");
+  console.log(window.screenX);
+  console.log(window.screenY);
 });
