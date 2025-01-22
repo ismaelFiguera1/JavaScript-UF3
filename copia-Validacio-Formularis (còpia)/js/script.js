@@ -39,8 +39,10 @@ d.addEventListener("keyup", (e) => {
 });
 
 d.addEventListener("submit", (e) => {
+  /*
   e.preventDefault();
   alert("enviant formulari");
+  */
   ($loader = d.querySelector(".contact-form-loader")),
     ($resposta = d.querySelector(".contact-form-response"));
 
@@ -48,10 +50,12 @@ d.addEventListener("submit", (e) => {
 
   setTimeout(() => {
     $loader.classList.add("none");
+    /*
     $resposta.classList.remove("none");
 
     setTimeout(() => {
       $resposta.classList.add("none");
     }, 3000);
+    */
   }, 3000);
 });
