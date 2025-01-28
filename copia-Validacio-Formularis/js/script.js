@@ -27,7 +27,7 @@ d.addEventListener("keyup", (e) => {
       //  Si el valor de l'input n compleix la expressio regular, afegeix l'atribut is-active, en cas contrari l'afegeix
       !regex.exec($input.value)
         ? d.getElementById($input.name).classList.add("is-active")
-        : d.getElementById($input.name).classList.remve("is-active");
+        : d.getElementById($input.name).classList.remove("is-active");
     }
     if (!pattern) {
       console.log("input sense patern");
