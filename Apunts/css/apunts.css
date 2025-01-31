@@ -1,44 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
+*,
+::before,
+::after{
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+h1,h2{
+  text-decoration: underline;
 }
 
-body > * {
-  margin: 5%;
+.tema{
+  margin:2%;
+  padding: 1%;
+  background-color: rgba(0, 255, 255, 0.15);
 }
 
-body header {
-  text-align: center;
+.imatges{
+  width: 100%;
 }
 
-body > header nav {
-  list-style-type: none;
+.imatges > *{
+  width: 33.33%;
+  padding: 1%;
 }
 
-.contingut p {
-  width: 40%;
-  margin-top: 1%;
-}
-
-.contingut > section {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  margin-top: 2%;
-}
-
-
-
-.block > section {
-    display: flex;  
-}
-
-.block {
-    margin-bottom: 5%;
-}

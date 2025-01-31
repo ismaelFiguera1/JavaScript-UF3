@@ -7,50 +7,103 @@
     <link rel="stylesheet" href="css/apunts.css" />
   </head>
   <body>
-    <header>
-      <h1>Apunts JAVASCRIPT</h1>
-      <nav>
+    <h1>
+      Apunts UF-3 de <b><i>JAVASCRIPT</i></b>
+    </h1>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Seleccionar elements DOM</h2>
+      <p>Hi ha la manera antiga i la nova: <br />La antiga:</p>
+      <ul>
+        <li>Per <b>tag</b>: document.getElementsByTagName("li")</li>
+        <li>Per <b>classe</b>: document.getElementsByClassName("card")</li>
+        <li>Per <b>atribut name</b>: document.getElementsByName("nom")</li>
+        <li>Per <b>id</b>: document.getElementById("menu")</li>
+      </ul>
+
+      <p>La nova:</p>
+      <ul>
         <li>
-          <a href="apunts.html#introduccio">Introduccio</a>
-          <a href="">a</a>
-          <a href="">aa</a>
+          document.querySelector(".cards"): Aquest agafa el <b>1r</b> element
+          que tingui la classe cards
         </li>
-      </nav>
-    </header>
+        <li>
+          document.querySelectorAll("a"): Aquest agafa <b>TOTS</b> els elements
+          que tinguin el tag "a"
+        </li>
+      </ul>
+      <span style="color: transparent">a</span>
+    </section>
 
-    <main>
-      <section id="introduccio" class="block">
-        <header><h2>Introduccio</h2></header>
-        <section class="contingut">
-          <section>
-            <h3>Objectes document</h3>
-            <p>
-              Els objectes documents, formen part de l'objecte global del DOM. I
-              aquestos, representen TOT el contingut html del fitxer, tambe
-              representen el contingut xml.
-            </p>
-          </section>
-          <img src="https://picsum.photos/200/300?random=1" alt="" />
-        </section>
-      </section>
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Recorrer Nodes</h2>
 
-      <section id="nodes" class="block">
-        <header><h2>Introduccio</h2></header>
-        <section class="contingut">
-          <section>
-            <h3>Objectes document</h3>
-            <p>
-              Els objectes documents, formen part de l'objecte global del DOM. I
-              aquestos, representen TOT el contingut html del fitxer, tambe
-              representen el contingut xml.
-            </p>
-          </section>
-          <img src="https://picsum.photos/200/300?random=1" alt="" />
-        </section>
-      </section>
-    </main>
-    <footer>
-      <section>Fet per Ismael Figuera</section>
-    </footer>
+      <p>
+        Ara recorrerem els nodes, els nodes son els elements que hem seleccionat
+        del DOM <br />Exemples:
+      </p>
+
+      <ul>
+        <li>
+          console.log(document.querySelectorAll("h2").forEach((ele)=>{
+          console.log(ele);}));
+        </li>
+        <li>
+          console.log(document.querySelectorAll(".tema").forEach((ele)=>{
+          console.log(ele);}));
+        </li>
+        <li>
+          console.log(document.querySelectorAll("li").forEach((ele)=>{
+          console.log(ele);}));
+        </li>
+      </ul>
+
+      <p>Aquestos son els resultats:</p>
+      <br /><br /><br />
+
+      <div class="imatges">
+        <img src="imatges/Captura.PNG" alt="" /><img
+          src="imatges/Captura1.PNG"
+          alt=""
+        /><img src="imatges/Captura3.PNG" alt="" />
+      </div>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Data attributes</h2>
+
+<p>Aixo es un exemple:</p>
+<div class="imatges ">
+  <img src="imatges/Captura2.PNG" alt="">
+  <img src="imatges/Captura4.PNG" alt="">
+</div>
+
+<p>Retorna el mateix, pero a la linea 1 busca directament el lang, i a la 2 ho busca per <b>atribute</b></p>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="js/apunts.js"></script>
   </body>
 </html>
