@@ -1,3 +1,9 @@
+:root{
+  --color-fons: grey;
+}
+
+
+
 *,
 ::before,
 ::after{
@@ -23,3 +29,12 @@ h1,h2{
   padding: 1%;
 }
 
+.imatges1 > *{
+  width: 49%;
+  padding: 1%;
+}
+
+.imatges2 > *{
+  width: 75%;
+  padding: 1%;
+}

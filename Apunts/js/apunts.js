@@ -1,2 +1,4 @@
-console.log(document.documentElement.lang);
-console.log(document.documentElement.getAttribute("lang"));
+var $text = document.querySelector(".textExemple");
+console.log($text);
+$text.innerHTML = "Es un text de <b><i>exemple</i></b>";
+console.log($text);
