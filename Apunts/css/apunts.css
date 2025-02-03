@@ -38,3 +38,8 @@ h1,h2{
   width: 75%;
   padding: 1%;
 }
+
+.exercici * {
+  border: 1px solid black;
+  margin: 2%;
+}
