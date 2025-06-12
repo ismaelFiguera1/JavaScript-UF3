@@ -8,7 +8,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Debug javascript local",
-      "url": "http://localhost:5500//${relativeFile}",
+      "url": "http://localhost:5500/${relativeFile}",
       "webRoot": "${workspaceFolder}"
     }
   ]
